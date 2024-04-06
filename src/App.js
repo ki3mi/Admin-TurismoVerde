@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import CompShowLocations from './location/ShowLocations';
+import CompCreateLocation from './location/CreateLocation';
+import CompEditLocation from './location/EditLocation';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const LocationList = () => {
+  return(
+    <div className='flex min-w-full min-h-screen justify-center items-center'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<CompShowLocations/>}/>
+          <Route path='/create' element={<CompCreateLocation/>}/>
+          <Route path='/edit/:id' element={<CompEditLocation/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
-  );
-}
+  )
+};
 
-export default App;
+export default LocationList;
