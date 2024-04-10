@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-const URI = 'http://192.168.18.20:8080/locations/'
+const URI = 'http://192.168.0.15:8080/locations/'
 
 const CompEditLocation = () => {
     const [title, setTitle] = useState('')
